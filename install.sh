@@ -14,7 +14,7 @@ HERE=$(cd `dirname $0`; pwd)
 DEPS=$HERE/deps
 
 # The source for the mattermost API package
-MATTERMOST_API_REPO=https://github.com/matterhorn-chat/mattermost-api.git
+MATTERMOST_API_REPO=https://github.com/abhin4v/mattermost-api.git
 MATTERMOST_API_QC_REPO=https://github.com/matterhorn-chat/mattermost-api-qc.git
 ASPELL_PIPE_REPO=https://github.com/matterhorn-chat/aspell-pipe.git
 
@@ -86,7 +86,7 @@ function clone_or_update_repo {
 }
 
 function install_deps {
-  branch=$(current_branch)
+  branch="feature/connection-pooling"
   clone_or_update_repo "${branch}" "$MATTERMOST_API_REPO" "$MATTERMOST_API_DIR"
   clone_or_update_repo "${branch}" "$MATTERMOST_API_QC_REPO" "$MATTERMOST_API_QC_DIR"
   clone_or_update_repo "${branch}" "$ASPELL_PIPE_REPO" "$ASPELL_PIPE_DIR"
